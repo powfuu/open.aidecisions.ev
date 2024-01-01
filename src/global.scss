@@ -1,0 +1,96 @@
+@import "@ionic/angular/css/core.css";
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+@function generateBackground() {
+  @return radial-gradient(18% 28% at 24% 50%, #CEFAFFFF 7%, #073AFF00 100%),radial-gradient(18% 28% at 18% 71%, #FFFFFF59 6%, #073AFF00 100%),radial-gradient(70% 53% at 36% 76%, #73F2FFFF 0%, #073AFF00 100%),radial-gradient(42% 53% at 15% 94%, #FFFFFFFF 7%, #073AFF00 100%),radial-gradient(42% 53% at 34% 72%, #FFFFFFFF 7%, #073AFF00 100%),radial-gradient(18% 28% at 35% 87%, #FFFFFFFF 7%, #073AFF00 100%),radial-gradient(31% 43% at 7% 98%, #FFFFFFFF 24%, #073AFF00 100%),radial-gradient(21% 37% at 72% 23%, #D3FF6D9C 24%, #073AFF00 100%),radial-gradient(35% 56% at 91% 74%, #8A4FFFF5 9%, #073AFF00 100%),radial-gradient(74% 86% at 67% 38%, #6DFFAEF5 24%, #073AFF00 100%),linear-gradient(125deg, #4EB5FFFF 1%, #4C00FCFF 100%); ;
+}
+
+*{
+    font-family: Montserrat,Montserrat-Fixed,Avenir,"Avenir Next LT Pro",Corbel,"URW Gothic",source-sans-pro,sans-serif;
+}
+
+body {
+    background: var(--ion-bg-color-font);
+    padding-top:45px;
+}
+
+.hidden-container {
+  animation: zoomOut .6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; 
+}
+
+.init-container {
+  animation-delay: 15s;
+  animation: zoomIn .5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; 
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.cprimary {
+    color: var(--ion-color-primary);
+}
+
+.spinner {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  animation: rotate 2s linear infinite;
+}
+
+.gradient-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: scale(.3);
+  background-size: 100% 100%;
+  background-image: generateBackground();
+  border-radius: 50%;
+  background-size: 100% 100%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}

@@ -1,0 +1,48 @@
+<ion-content *ngIf="(decisions$ | async) as decisionsStore">
+  <ai-decisions-header></ai-decisions-header>
+  <div (click)="stopProcess()" *ngIf="decisionsStore.startedDecisionProcess && !decisionsStore.endDecisionProcess"
+    class="edit-process-body">
+    <div class="edit-process-container">
+      <ion-icon name="close-circle"></ion-icon>
+      <p>Stop process</p>
+    </div>
+  </div>
+  <decision-chooser-openai [handleOpenModal]="handleOpenModal"
+    *ngIf="!decisionsStore.endDecisionProcess"></decision-chooser-openai>
+  <div *ngIf="!decisionsStore.endDecisionProcess; else endDecisionProcess"
+    [class]="decisionsStore.endDecisionProcess ? 'hidden-container container' : 'container'">
+    <ng-container *ngIf="decisionsStore.startedDecisionProcess; else emptyState">
+      <div class="pair withProcess">
+        <ion-icon color="primary" name="analytics" class="animation-1"></ion-icon>
+        <div class="item animation-2">
+          <p class="title animation-3">No. of decisions</p>
+          <p class="description animation-3">{{decisionsStore.decisions.length}} <span (click)="triggerModal()"
+              class="cprimary" style="text-decoration: underline; float: right;">Edit values</span></p>
+        </div>
+      </div>
+      <div class="pair withProcess">
+        <ion-icon color="primary" name="logo-electron" class="animation-4"></ion-icon>
+        <div class="item animation-5">
+          <p class="title animation-6">GPT Model</p>
+          <p class="description animation-6">
+            4+
+          </p>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #emptyState>
+      <div class="pair emptyState">
+        <ion-icon color="primary" name="globe-outline" class="animation-1"></ion-icon>
+        <div class="item animation-2">
+          <p class="title animation-3">OpenAI Technology</p>
+          <p class="description animation-3">GPT 4+ will offer you the best decision possible.</p>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+
+  <ng-template #endDecisionProcess>
+    <decisions-result [fromOpenAi]="true"></decisions-result>
+  </ng-template>
+
+</ion-content>

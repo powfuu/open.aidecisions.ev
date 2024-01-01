@@ -1,0 +1,29 @@
+<ng-container *ngIf="(decisions$ | async) as decisionsStore">
+  <div class="init-container container">
+    <div class="loading-final-process" *ngIf="!loaded">
+      <div class="spinner">
+        <div class="gradient-circle"></div>
+      </div>
+      <p *ngIf="!fromOpenAi" class="loading-text"></p>
+      <p *ngIf="fromOpenAi" class="loading-text-openai"></p>
+    </div>
+  </div>
+  <div *ngIf="loaded">
+    <div class="edit-process-body">
+      <div (click)="editDecisions()" class="edit-process-container">
+        <ion-icon name="create"></ion-icon>
+        <p>Edit decisions</p>
+      </div>
+    </div>
+    <div class="init-container result-container">
+      <ion-icon color="primary" name="analytics"></ion-icon>
+      <p>{{!fromOpenAi ? decisionChoosen : decisionsStore.openAiDecisionChoosen}}</p>
+      <div (click)="restartEntireProcess()" class="restart-process-container">
+        <ion-icon name="reload"></ion-icon>
+      </div>
+    </div>
+    <div class="not-satisfied-container" *ngIf="!fromOpenAi">
+      <p (click)="tryAgain()">Not satisfied with this decision? <span class="cprimary">Try again</span></p>
+    </div>
+  </div>
+</ng-container>

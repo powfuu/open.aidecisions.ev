@@ -1,0 +1,111 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 45px;
+  margin-top: -35px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.withProcess{
+  margin-top: 10px;
+}
+
+.pair {
+  display: flex;
+  flex-direction: column;
+}
+
+.pair ion-icon {
+  font-size:40px;
+}
+
+.item {
+  text-align: center;
+  margin-bottom: -20px;
+}
+
+.title {
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.description {
+  margin-top: -5px;
+  font-size: 15px;
+  text-align: left;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animation-1 {
+  animation: zoomIn .6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+}
+
+.animation-2 {
+  animation-delay: 4s;
+  animation: zoomIn .6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+}
+
+.animation-3 {
+  animation-delay: 8s;
+  animation: zoomIn .6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+}
+
+.animation-4 {
+  animation-delay: 20s;
+  animation: zoomIn .6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+}
+
+.animation-5 {
+  animation-delay: 24s;
+  animation: zoomIn .6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+}
+
+.animation-6 {
+  animation-delay: 28s;
+  animation: zoomIn .6s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+}
+
+.emptyState {
+  margin-top: 0px;
+}
+
+.edit-process-container {
+  position: absolute;
+  right: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    padding-left:12px;
+    padding-right:12px;
+    border-radius: 10px;
+    height:40px;
+    margin-right: 20px;
+    width: max-content;
+    transition: .3s all ease-in-out;
+    &:hover {
+        background: #fff;
+        color: #000;
+    }
+    p {
+        font-size:15px;
+    }
+    ion-icon {
+        font-size:20px;
+    }
+}

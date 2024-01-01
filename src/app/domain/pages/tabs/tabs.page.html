@@ -1,0 +1,17 @@
+<ion-tabs *ngIf="(decisions$ | async) as decisionsStore">
+
+  <ion-tab-bar
+    (click)="decisionsStore.startedDecisionProcess || decisionsStore.endDecisionProcess ? presentDisabledError() : false"
+    slot="bottom" class="ion-no-border">
+    <ion-tab-button [disabled]="decisionsStore.startedDecisionProcess || decisionsStore.endDecisionProcess"
+      tab="randomly-choose" class="start">
+      <ion-icon name="dice"></ion-icon>
+    </ion-tab-button>
+
+    <ion-tab-button [disabled]="decisionsStore.startedDecisionProcess || decisionsStore.endDecisionProcess"
+      tab="openai-choose">
+      <ion-icon name="globe-outline"></ion-icon>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>

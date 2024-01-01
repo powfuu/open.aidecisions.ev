@@ -1,0 +1,144 @@
+.loading-text {
+    margin-top:-5px;
+}
+
+.loading-final-process {
+    margin-top:290px;
+    left: 50%;
+}
+
+.loading-final-process, .result-container {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    gap:3px;
+    width: 100%;
+    position: absolute;
+    top: 35%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.result-container ion-icon{
+    font-size:60px;
+}
+
+.result-container p{
+    font-size:20px;
+    max-width: 80%;
+    text-align: center;
+}
+
+.restart-process-container {
+    padding-top: 30px;
+    margin-bottom: -5px;
+}
+
+.edit-process-container {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    text-align: center;
+    margin-left: auto;
+    padding-left:12px;
+    padding-right:12px;
+    border-radius: 10px;
+    height:40px;
+    margin-right: 20px;
+    width: max-content;
+    transition: .3s all ease-in-out;
+    &:hover {
+        background: #fff;
+        color: #000;
+    }
+    p {
+        font-size:15px;
+    }
+    ion-icon {
+        font-size:20px;
+    }
+}
+
+.restart-process-container ion-icon{
+    font-size:40px;
+    padding: 10px;
+    border-radius: 100%;
+    transition: .3s all ease-in-out;
+    &:hover { 
+        background: #fff;
+        color: #000;
+    }
+}
+
+.not-satisfied-container {
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    width: 100%;
+    bottom: 0;
+    margin-bottom:20px;
+ p {
+    font-size: 15.5px;
+    text-align: center;
+    color: rgb(240, 240, 240);
+ }
+}
+
+.loading-text::before {
+  content: 'Generating randomly decisions';
+  animation: changeText 4s linear infinite forwards;
+}
+
+.loading-text-openai::before {
+  content: 'Generating response';
+  animation: changeTextOpenAI 2s linear infinite;
+}
+
+@keyframes changeTextOpenAI {
+  0% {
+    content: 'Generating response.';
+  }
+  30% {
+    content: 'Generating response..';
+  }
+  60% {
+    content: 'Generating response...';
+  }
+  90% {
+    content: 'Done';
+  }
+}
+
+@keyframes changeText {
+  0% {
+    content: 'Generating randomly decision.';
+  }
+  10% {
+    content: 'Generating randomly decisions..';
+  }
+  20% {
+    content: 'Generating randomly decisions...';
+  }
+  30% {
+    content: 'Generating randomly decisions.';
+  }
+  40% {
+    content: 'Generating randomly decisions..';
+  }
+  50% {
+    content: 'Generating randomly decisions...';
+  }
+  60% {
+    content: 'Generating response..';
+  }
+  70% {
+    content: 'Generating response...';
+  }
+  80% {
+    content: 'Playing pou...';
+  }
+  100% {
+    content: 'Done';
+  }
+}

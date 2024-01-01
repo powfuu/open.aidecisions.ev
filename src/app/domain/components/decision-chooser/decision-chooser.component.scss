@@ -1,0 +1,247 @@
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 62%;
+    transition: 1s all ease-in-out;
+}
+
+a { 
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 500;
+    width: 180px;
+    height: 180px;
+    line-height: 182px;
+    border-radius: 180px;
+    transform: translateY(18px) translateX(0);
+    cursor: pointer;
+}
+
+a .start-ring, a .end-ring {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    box-sizing: border-box;
+    border: 2px #26c5dd solid;
+    opacity: 0;
+}
+
+a .start-ring {
+    animation-name: start-ring;
+    animation-delay: 0s;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+a .end-ring {
+    animation-name: start-ring;
+    animation-delay: 2.5s;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+a .ring-border {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    box-sizing: border-box;
+    background-color: #141526;
+    border: 3px transparent solid;
+    background-origin: border-box;
+    background-clip: content-box,border-box;
+    background-image: linear-gradient(#141526,#141526),linear-gradient(to bottom,#2de5d1,#1fa4e9);
+    animation-name: start-heartbeat;
+    animation-delay: 3.5s;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+}
+
+a .ring-text {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    font-size:40px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    opacity: 1;
+}
+
+@keyframes start-ring {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    10% {
+        opacity: 0;
+        transform: scale(0.995);
+    }
+    16.667% {
+        opacity: 1;
+    }
+    26.667% {
+        opacity: 0;
+        transform: scale(1.3);
+    }
+    30% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    40% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    46.667% {
+        opacity: 1;
+    }
+    56.667% {
+        opacity: 0;
+        transform: scale(1.3);
+    }
+    60% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    70% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    76.667% {
+        opacity: 1;
+    }
+    86.667% {
+        opacity: 0;
+        transform: scale(1.3);
+    }
+    90% {
+        opacity: 0;
+        transform: scale(2);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+ion-searchbar {
+    --border-radius:50px;
+    margin: 0px 0px;
+    width: 80%;
+}
+
+.ios ion-searchbar input {
+    padding-right:20px;
+    padding-left:20px;
+}
+
+ion-item ion-label{
+    margin-left:25px;
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+ion-item ion-label ion-icon {
+    font-size: 20px;
+    min-width: 20px; 
+}
+
+#empty-decision-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 35%;
+    width: 100%;
+}
+.emptyDecisionIc {
+    font-size:30px;
+    color: gray;
+    margin-bottom:-5px;
+}
+.emptyDecision {
+    color: gray;
+}
+
+.add-option-container {
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+}
+
+.add-option-container ion-icon {
+    font-size:20px;
+    padding: 8px;
+    border-radius: 100%;
+    transition: .3s all ease-in-out;
+}
+.add-option-container ion-icon:hover {
+    cursor: pointer;
+    background: white;
+    color: black;
+}
+.choose-decision {
+    font-size:16px;
+    margin-left: auto;
+    transition: .2s all ease-in-out;
+    margin-right:-5px;
+}
+.choose-decision:hover {
+    transform: scale(1.1);
+}
+.modal-header {
+    gap: 15px;
+    height: initial;
+    margin-bottom: -65px;
+    padding:0px 20px;
+}
+.title-container {
+    flex-direction: column;
+}
+.title-container .header-title{
+    font-size:17px;
+    font-weight: bold;
+    margin-right: auto;
+}
+.title-container .header-description {
+    font-size:14px;
+    margin-top:-8px;
+    margin-right: auto;
+}
+ion-label .trash-dc{
+    margin-left: auto;
+    margin-right:20px;
+    font-size:20px;
+    padding: 8px;
+    border-radius: 100%;
+    transition: .3s all ease-in-out;
+}
+ion-label .trash-dc:hover {
+    cursor: pointer;
+    background: white;
+    color: black;
+}
+.dice-header {
+    margin-right:11px;
+}

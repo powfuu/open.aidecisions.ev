@@ -1,0 +1,60 @@
+<ng-container *ngIf="(decisions$ | async) as decisionsStore">
+  <div [class]="decisionsStore.endDecisionProcess ? 'hidden-container' : ''"
+    (click)="decisionsStore.startedDecisionProcess ? getDecision() : openModal()">
+    <a>
+      <span class="start-ring"></span>
+      <span class="end-ring"></span>
+      <span class="ring-border"></span>
+      <span class="ring-text">{{decisionsStore.startedDecisionProcess ? 'get' : 'go'}}</span>
+    </a>
+  </div>
+
+  <ion-modal #modalOptions trigger="modalOptions"
+    [initialBreakpoint]="0.65" [breakpoints]="[0, 0.25, 0.5, 0.65, 1]">
+    <ng-template>
+      <ion-content>
+        <br />
+        <div class="modal-header">
+          <div class="title-container">
+            <p class="header-title"><ion-icon class="dice-header" [name]="'dice'"></ion-icon>
+              Randomly decision</p>
+            <p class="header-description">Leave your
+              destiny on a random choice.</p>
+          </div>
+          <ion-button mode="ios" (click)="editDecisions()" class="choose-decision"
+            color="secondary">{{decisionsStore.startedDecisionProcess ? "Edit decisions" : "Get
+            decision"}}</ion-button>
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="add-option-container">
+          <ion-searchbar mode="md" [(ngModel)]="currentDecision" search-icon="chatbubble-ellipses" color="secondary"
+            placeholder="Add a new option to get your decision"></ion-searchbar>
+          <ion-icon (click)="pushDecision()" name="arrow-forward-outline"></ion-icon>
+        </div>
+        <ion-scroll>
+
+          <ion-list *ngIf="decisionsStore.decisions.length > 0; else emptyDecisions">
+            <ion-item mode="md" *ngFor="let dc of decisionsStore.decisions; let i = index">
+              <ion-label>
+                <ion-icon name="analytics"></ion-icon>
+                <h2>{{ dc }}</h2>
+                <ion-icon (click)="removeDecision(i)" class="trash-dc" name="trash"></ion-icon>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+
+          <br />
+        </ion-scroll>
+        <ng-template #emptyDecisions>
+          <div id="empty-decision-container">
+            <ion-icon class="emptyDecisionIc" name="planet-outline"></ion-icon>
+            <p class="emptyDecision">There's no decision added yet.</p>
+          </div>
+        </ng-template>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+</ng-container>

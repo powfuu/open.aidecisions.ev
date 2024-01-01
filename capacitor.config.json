@@ -1,0 +1,11 @@
+{
+  "appId": "ev.ai.decisions",
+  "appName": "AI Decisions",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  },
+  "SplashScreen": {
+    "launchShowDuration": 1000
+  }
+}
