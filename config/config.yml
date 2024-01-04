@@ -8,7 +8,7 @@ platforms:
             App:
                 version: '$VERSION_NAME'
                 buildNumber: '$VERSION_CODE'
-                bundleId: ev.ai.decisions
+                bundleId: ev.ai.rnd.decisions
                 displayName: AI Decisions
                 # TODO: App -> Para ejecutarlo en livereload, cambiar para version en prod
                 productName: App # productName: AI Decisions
