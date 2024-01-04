@@ -35,7 +35,7 @@ export class DecisionsResultComponent implements OnInit {
   addDelaySpinner() {
     if (this.fromOpenAi) {
       setTimeout(() => {
-        this.loaded = true;
+        // this.loaded = true;
       }, 2000);
     } else {
       setTimeout(() => {

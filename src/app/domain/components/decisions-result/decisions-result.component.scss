@@ -90,6 +90,10 @@
   animation: changeText 4s linear infinite forwards;
 }
 
+.loading-text-openai {
+  margin-top: -10px;
+}
+
 .loading-text-openai::before {
   content: 'Generating response';
   animation: changeTextOpenAI 2s linear infinite;
