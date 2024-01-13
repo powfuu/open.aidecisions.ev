@@ -19,16 +19,16 @@
 
 body {
     background: var(--ion-bg-color-font);
-    padding-top:45px;
+    padding-top: env(safe-area-inset-top);
 }
 
 .hidden-container {
-  animation: zoomOut .6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; 
+  animation: zoomOut .6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 .init-container {
   animation-delay: 15s;
-  animation: zoomIn .5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; 
+  animation: zoomIn .5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 @keyframes zoomOut {
