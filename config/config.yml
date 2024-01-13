@@ -53,39 +53,6 @@ platforms:
               inject: |
                   <item name="android:windowSplashScreenBackground">#141526</item>
         res:
-            - path: drawable
-              file: splash.png
-              source: resources/android/splash/splash.png
-            - path: drawable-land-hdpi
-              file: splash.png
-              source: resources/android/splash/splash.png
-            - path: drawable-land-mdpi
-              file: splash.png
-              source: resources/android/splash/splash.png
-            - path: drawable-land-xhdpi
-              file: splash.png
-              source: resources/android/splash/splash.png
-            - path: drawable-land-xxhdpi
-              file: splash.png
-              source: resources/android/splash/splash.png
-            - path: drawable-land-xxxhdpi
-              file: splash.png
-              source: resources/android/splash/splash.png
-            - path: drawable-port-hdpi
-              file: splash.png
-              source: resources/android/splash/splash.png
-            - path: drawable-port-xhdpi
-              file: splash.png
-              source: resources/android/splash/splash.png
-            - path: drawable-port-xxhdpi
-              file: splash.png
-              source: resources/android/splash/splash.png
-            - path: drawable-port-xxxhdpi
-              file: splash.png
-              source: resources/android/splash/splash.png
-            - path: drawable-port-mdpi
-              file: splash.png
-              source: resources/android/splash/splash.png
             - path: mipmap-hdpi
               file: ic_launcher.png
               source: resources/android/icon/ic_launcher.png
